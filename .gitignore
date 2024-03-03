@@ -1,0 +1,21 @@
+# Ignore Python compiled files
+**/__pycache__
+
+# Ignore virtual environment
+.venv
+
+# Ignore VS Code settings
+.vscode
+
+# Ignore Mac system files
+**/.DS_Store
+
+# Ignore environment variables
+**/.env
+
+# Ignore all files in Storage and Chromedriver directories
+Storage/
+Chromedriver/
+
+# Ignore CONTRIBUTING.md
+CONTRIBUTING.md
