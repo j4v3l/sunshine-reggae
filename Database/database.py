@@ -1,3 +1,11 @@
+"""  Database module
+
+    Returns:
+        type: sqlite3.Connection
+
+    Yields:
+        type: sqlite3.Cursor
+"""
 import sqlite3
 from contextlib import contextmanager
 
@@ -100,3 +108,25 @@ def get_last_scraped_page():
         cursor.execute("SELECT MAX(page) FROM attractions")
         result = cursor.fetchone()[0]
         return result if result is not None else 0
+
+
+def get_attractions():
+    """ Get the attractions from the database
+
+    Returns:
+        _type_: list
+    """
+    with get_db_cursor() as cursor:
+        cursor.execute(
+            "SELECT title, location, detail_link, address, phone, description FROM attractions"
+        )
+        attractions = cursor.fetchall()
+        return [{
+            "title": title,
+            "location": location,
+            "detail_link": detail_link,
+            "address": address,
+            "phone": phone,
+            "description": description,
+        } for title, location, detail_link, address, phone, description in
+                attractions]
