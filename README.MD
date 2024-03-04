@@ -28,6 +28,12 @@ Below is the detailed project directory layout, including descriptions for each 
 - 📄 **README.MD**: Offers an overview of the project, setup instructions, and usage examples.
 - 📄 **requirements.txt**: Lists all the Python package dependencies for the project.
 - 📁 **Storage/**: A designated space for temporary data storage during scraping sessions.
+<!-- add the new go-api folder that contains go.mod, go.sum, main.go robots.txt -->
+- 📁 **go-api/**: Contains the Go API for the project.
+  - 📄 `go.mod`: The Go module file that defines the module's name and its dependencies.
+  - 📄 `go.sum`: The Go checksum file that lists the expected cryptographic checksums of the content of specific module versions.
+  - 📄 `main.go`: The main entry point for the Go API.
+  - 📄 `robots.txt`: The robots.txt file that specifies the scraping policies for the Go API.
 
 ## 📚 Detailed Dependencies
 
@@ -53,6 +59,9 @@ The `requirements.txt` file contains all necessary Python packages. Here's a bri
 
 - **Running the Scraper**: Execute the following command to start scraping. Parameters and targets can be configured within this script.
   - python main.py
+
+- **API Execution**: Navigate to the go-api/ directory and run the following command to start the Go API.
+  - go run main.go
 
 ## 📝 Contribution Guidelines
 
